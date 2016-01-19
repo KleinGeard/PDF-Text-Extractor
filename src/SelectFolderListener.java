@@ -1,10 +1,8 @@
-import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
 import javax.swing.JFileChooser;
-import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 

@@ -28,7 +28,7 @@ public class ConvertListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		Thread t = new Thread(new Runnable() { //enables me to update lblProgressInfo JLabel while running the parser.
+		Thread t = new Thread(new Runnable() { //enables me to update lblProgressInfo and btnConvert while running the parser.
 	        @Override
 	        public void run() {
 	        	

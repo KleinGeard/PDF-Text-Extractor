@@ -1,18 +1,14 @@
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 import java.io.Writer;
-import java.util.ArrayList;
 
 import javax.swing.JLabel;
 
 import org.apache.pdfbox.cos.COSDocument;
 import org.apache.pdfbox.io.RandomAccessBufferedFileInputStream;
-import org.apache.pdfbox.io.RandomAccessFile;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
@@ -35,7 +31,6 @@ public class Parser {
 		try {
 			this.textStripper = new PDFTextStripper();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -47,13 +42,13 @@ public class Parser {
 			
 			if (file.toString().contains(".pdf")) {
 				
-				String fileCurrentlyBeingConverted = file.toString().substring(file.toString().lastIndexOf("\\") + 1, file.toString().length());
-				
+				String fileCurrentlyBeingConverted = file.toString().substring(file.toString().lastIndexOf("\\") + 1, file.toString().length());				
 				this.lblProgressInfo.setText("Converting " + fileCurrentlyBeingConverted);
 				
 				this.setDestination(file);
 				this.createTextFile(file);
 				this.parse(file);
+				
 			}
 			
 		}

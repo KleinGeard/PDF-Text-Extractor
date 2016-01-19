@@ -2,21 +2,13 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
-import java.io.File;
 
-import javax.swing.JPanel;
-import javax.swing.BoxLayout;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 
 import java.awt.Color;
-import javax.swing.JTextArea;
-import javax.swing.JSplitPane;
-import java.awt.Toolkit;
 
 public class Main {
 
