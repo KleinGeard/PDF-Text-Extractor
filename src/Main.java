@@ -92,8 +92,7 @@ public class Main {
 		btnSelectTargetFolder.setBounds(12, 13, 185, 25);
 		this.frmPdfTextExtractor.getContentPane().add(btnSelectTargetFolder);
 		
-		String targetOpenDialogTitleText = "Choose folder containing PDFs";
-		SelectFolderListener selectTargetFolderListener = new SelectFolderListener(this.targetFolderField, targetOpenDialogTitleText);
+		SelectFolderListener selectTargetFolderListener = new SelectFolderListener(this.targetFolderField);
 		btnSelectTargetFolder.addActionListener(selectTargetFolderListener);
 		
 	}
@@ -113,8 +112,7 @@ public class Main {
 		btnSelectDestinationFolder.setBounds(12, 51, 185, 25);
 		this.frmPdfTextExtractor.getContentPane().add(btnSelectDestinationFolder);
 		
-		String destinationOpenDialogTitleText = "Choose folder containing PDFs";
-		SelectFolderListener selectDestinationFolderListener = new SelectFolderListener(this.destinationFolderField, destinationOpenDialogTitleText);
+		SelectFolderListener selectDestinationFolderListener = new SelectFolderListener(this.destinationFolderField);
 		btnSelectDestinationFolder.addActionListener(selectDestinationFolderListener);
 		
 	}

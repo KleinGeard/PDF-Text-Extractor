@@ -11,19 +11,16 @@ public class SelectFolderListener implements ActionListener {
 	private JTextField folderField;
 	private File fileDirectory;
 	private JFileChooser fileChooser = new JFileChooser();
-	private String openDialogTitleText;
 	
-	public SelectFolderListener(JTextField folderField, String openDialogTitleText) {
+	public SelectFolderListener(JTextField folderField) {
 		
 		this.folderField = folderField;
-		this.openDialogTitleText = openDialogTitleText;
 		
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		UIManager.put("FileChooser.openDialogTitleText", this.openDialogTitleText);
         this.fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int returnValue = this.fileChooser.showOpenDialog(null);
 
