@@ -1,6 +1,6 @@
 # PDF-Text-Extractor
 
-This is a program made to convert directories of .pdf files into .txt. 
+This is a program made to convert directories of pdf files into txt. 
 
 it uses Apache PDFBox 2.0.0 which you can download here: https://pdfbox.apache.org/download.cgi 
 
@@ -14,9 +14,9 @@ it uses Apache PDFBox 2.0.0 which you can download here: https://pdfbox.apache.o
 
 • Run the program.
 
-• Select a Target Folder (The folder containing the .pdf documents you wish to have converted).
+• Select a Target Folder (The folder containing the pdf documents you wish to have converted).
 
-• Select a Destination Folder (The folder you wish the converted .txt documents to be saved to.)
+• Select a Destination Folder (The folder you wish the converted txt documents to be saved to.)
 
 • Click "Convert".
 
@@ -34,9 +34,7 @@ With PDF-Text-Extractor you could do it in seconds.
 
 #### No limits to file size
 
-Most pdf to txt converters limit the size of the files you can convert to a very tiny maximum size and often require you to sign up to an expensive subscription in order to exceed that.
-
-So if you have any pdf documents larger than that... too bad. Pay them or get lost.
+Most pdf to txt converters limit the size of the files you can convert to a very tiny maximum size and often require you to sign up to an expensive monthly subscription in order to exceed that.
 
 PDF-TextExtractor has no limit to the size of the files you can convert, and it's free/open source.
 
@@ -50,14 +48,15 @@ Surprisingly most of the pdf to text converters already out there don't even do 
 
 A few pdf to text converters that I've tried took upwards of 5 minutes just to give you the text from a single 8.9mb pdf document.
 
-PDF-Text-Extractor could do this pretty much instantly.
+PDF-Text-Extractor can do this pretty much instantly.
 
 #### Privacy
 
 With PDF-Text-Extractor you don't need to upload your potentially confidential pdf documents to some foreign server where they may be read or stolen and you don't need to give anyone your email in order to use it.
 
-
-
+## Limitations
+ 
+Some pdf documents are made up of scanned images rather than actual text. Unfortunately these can not be converted.
 
 
 
