@@ -30,17 +30,17 @@ If you Google "pdf to text" you will see quite a few different results, so why s
   
 Almost all of the pdf to txt converters already out there limit you to one pdf at a time, meaning if you had several hundred that you wanted to convert it would take hours to do it all manually.
 
-With PDF-Text-Extractor you could do it in seconds.
+With PDF-Text-Extractor you can convert entire directories containing as many pdf files as you want.
 
 #### No limits to file size
 
 Most pdf to txt converters have a very small limit on the size of the files you can convert and often require you to sign up to an expensive monthly subscription in order to exceed that.
 
-PDF-TextExtractor has no limit to the size of the files you can convert, and it's free/open source.
+PDF-TextExtractor has no limit to the size of the files you can convert, and it's free.
 
 #### Respectable to the original formatting
 
-PDF-Text-Extractor retains the spaces/line-breaks/carriage-returns that appear in the pdf document.
+PDF-Text-Extractor retains the spaces, line-breaks and carriage-returns that appear in the pdf document.
 
 Surprisingly most of the pdf to text converters already out there don't even do this.
 
@@ -56,9 +56,9 @@ With PDF-Text-Extractor you don't need to upload your potentially confidential p
 
 ## Limitations
  
-Some pdf documents are made up of scanned images rather than actual text. Unfortunately these can not be converted.
+• Some pdf documents are made up of scanned images rather than actual text. Unfortunately these can not be converted.
 
-
+• Tables, graphs, maps, lists, indexes, etc, may come out funny. This just happens to be the way the text is stored in the file.
 
 
 
