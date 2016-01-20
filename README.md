@@ -26,7 +26,7 @@ it uses Apache PDFBox 2.0.0 which you can download here: https://pdfbox.apache.o
 
 If you Google "pdf to text" you will see quite a few different results, so why should you use this?
 
-#### PDF-Text-Extractor batch runs folders
+#### batch run folders
   
 Almost all of the pdf to txt converters already out there limit you to one pdf at a time, meaning if you had several hundred that you wanted to convert it would take hours to do it all manually.
 
@@ -44,16 +44,17 @@ PDF-TextExtractor has no limit to the size of the files you can convert, and it'
 
 PDF-Text-Extractor retains the spaces/line-breaks/carriage-returns that appear in the pdf document.
 
-Surprisingly a lot of the pdf to text converters already out there don't even do this.
+Surprisingly most of the pdf to text converters already out there don't even do this.
 
 #### It's fast
 
-A few pdf to text converters that I've tried took upwards of 5 minutes just to convert single 8.9mb file.
+A few pdf to text converters that I've tried took upwards of 5 minutes just to give you the text from a single 8.9mb pdf document.
 
 PDF-Text-Extractor could do this pretty much instantly.
 
+#### Privacy
 
-
+With PDF-Text-Extractor you don't need to upload your potentially confidential pdf documents to some foreign server where they may be read or stolen and you don't need to give anyone your email in order to use it.
 
 
 
