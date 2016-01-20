@@ -21,6 +21,9 @@ public class Parser {
 	private PDFTextStripper textStripper;
 	private PDFParser parser;
 	private JLabel lblProgressInfo;
+	private String nameOfFileCurrentlyBeingConverted;
+	private COSDocument cosDoc = null;
+	private PDDocument pdDoc = null;
 	
 	public Parser(File targetFileDirectory, File destinationFileDirectory, JLabel lblProgressInfo) {
 		
@@ -42,11 +45,10 @@ public class Parser {
 			
 			if (file.toString().contains(".pdf")) {
 				
-				String fileCurrentlyBeingConverted = file.toString().substring(file.toString().lastIndexOf("\\") + 1, file.toString().length());				
-				this.lblProgressInfo.setText("Converting " + fileCurrentlyBeingConverted);
-				
+				this.setNameOfFileCurrentlyBeingConverted(file);
 				this.setDestination(file);
-				this.createTextFile(file);
+				this.updateProgressInfo(file);
+				
 				this.parse(file);
 				
 			}
@@ -54,6 +56,26 @@ public class Parser {
 		}
 		
 		this.lblProgressInfo.setText("Done.");
+		
+	}
+	
+	private void setNameOfFileCurrentlyBeingConverted (File file) {
+		
+		//e.g. "Bible_King_James_Version"
+		this.nameOfFileCurrentlyBeingConverted = (file.toString().substring(file.toString().lastIndexOf("\\") + 1)).replace(".pdf", "");
+		
+	}
+	
+	private void setDestination(File file) {
+		
+		//e.g. "C:\Users\klein\Documents\pdf work related\txtDirectories\religious\Bible_King_James_Version.txt"
+        this.destination = this.destinationFileDirectory.toString() + "\\" + this.nameOfFileCurrentlyBeingConverted + ".txt";
+        
+	}
+	
+	private void updateProgressInfo(File file) {
+			
+		this.lblProgressInfo.setText("Converting " + this.nameOfFileCurrentlyBeingConverted);
 		
 	}
 	
@@ -68,41 +90,19 @@ public class Parser {
 		
 	}
 	
-	private void createTextFile(File file) {
-		
-        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream(this.destination), "utf-8"))) {
-            writer.write("");
-        } catch (Exception e) {
-        	e.printStackTrace();
-        }
-		
-	}
-	
-	private void setDestination(File file) {
-		
-		String fileString = file.toString().substring(file.toString().lastIndexOf('\\') + 1);
-        fileString = fileString.replace(".pdf", "") + ".txt";
-        String destinationString = this.destinationFileDirectory.toString().replace("F:\\", "F:/") + "/" + fileString;
-        this.destination = destinationString;
-        
-	}
-	
 	private String getText(File file) {
 		
 		String text = "";
-		COSDocument cosDoc = null;
-		PDDocument pdDoc = null;
 		
 	   	try {
 	   		
 	   		this.parser = new PDFParser(new RandomAccessBufferedFileInputStream(file));
-	   		parser.parse();
+	   		this.parser.parse();
 	   		
-	   		cosDoc = parser.getDocument();
-	   		pdDoc = new PDDocument(cosDoc);
+	   		this.cosDoc = this.parser.getDocument();
+	   		this.pdDoc = new PDDocument(this.cosDoc);
 	   		
-	   		text = textStripper.getText(pdDoc);
+	   		text = this.textStripper.getText(this.pdDoc);
 	   		
 	   	} catch (Exception e) {
 	   		e.printStackTrace();
@@ -110,11 +110,11 @@ public class Parser {
 	   		
 	   		try {
 	   			
-	   			if (cosDoc != null) {
-                    cosDoc.close();
+	   			if (this.cosDoc != null) {
+                    this.cosDoc.close();
                 }
-	   			if (pdDoc != null) {
-	   				pdDoc.close();
+	   			if (this.pdDoc != null) {
+	   				this.pdDoc.close();
 	   			}
 				
 			} catch (IOException e) {
