@@ -3,12 +3,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
-
-import java.awt.Color;
 
 public class Main {
 
@@ -18,9 +17,6 @@ public class Main {
 	private JLabel lblProgressInfo;
 	private JButton btnConvert;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -34,16 +30,10 @@ public class Main {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public Main() {
 		initialise();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialise() {
 		
 		this.addTheme();
