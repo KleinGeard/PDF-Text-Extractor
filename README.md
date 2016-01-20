@@ -34,7 +34,7 @@ With PDF-Text-Extractor you could do it in seconds.
 
 #### No limits to file size
 
-Most pdf to txt converters limit the size of the files you can convert to a very tiny maximum size and often require you to sign up to an expensive monthly subscription in order to exceed that.
+Most pdf to txt converters have a very small limit on the size of the files you can convert and often require you to sign up to an expensive monthly subscription in order to exceed that.
 
 PDF-TextExtractor has no limit to the size of the files you can convert, and it's free/open source.
 
