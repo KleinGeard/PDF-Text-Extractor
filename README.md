@@ -28,7 +28,7 @@ If you Google "pdf to text" you will see quite a few different results, so why s
 
 #### batch run folders
   
-Almost all of the pdf to txt converters already out there limit you to one pdf at a time, meaning if you had several hundred that you wanted to convert it would take hours to do it all manually.
+Almost all of the pdf to txt converters already out there limit you to one pdf at a time, meaning if you had several hundred files it would take hours to do it all manually.
 
 With PDF-Text-Extractor you can convert entire directories containing as many pdf files as you want.
 
@@ -50,7 +50,7 @@ A few pdf to text converters that I've tried took upwards of 5 minutes just to g
 
 PDF-Text-Extractor can do this pretty much instantly.
 
-#### Privacy
+#### Privacy and security
 
 With PDF-Text-Extractor you don't need to upload your potentially confidential pdf documents to some foreign server where they may be read or stolen and you don't need to give anyone your email in order to use it.
 
