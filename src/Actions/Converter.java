@@ -1,3 +1,4 @@
+package Actions;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -13,7 +14,7 @@ import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 
-public class Parser {
+public class Converter {
 
 	private File[] targetPDFFiles;
 	private File destinationFileDirectory;
@@ -25,7 +26,7 @@ public class Parser {
 	private COSDocument cosDoc = null;
 	private PDDocument pdDoc = null;
 	
-	public Parser(File targetFileDirectory, File destinationFileDirectory, JLabel lblProgressInfo) {
+	public Converter(File targetFileDirectory, File destinationFileDirectory, JLabel lblProgressInfo) {
 		
 		this.targetPDFFiles = targetFileDirectory.listFiles();
 		this.destinationFileDirectory = destinationFileDirectory;

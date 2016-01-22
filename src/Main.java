@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 
+import ButtonPressed.*;
+
 public class Main {
 
 	private JFrame frmPdfTextExtractor;
@@ -44,6 +46,7 @@ public class Main {
 		this.initialiseProgressInfoLabel();
 		this.initialiseConvertButton();
 		this.initialiseExtractInfoButton();
+		this.addActionListeners();
 		
 	}
 	
@@ -125,8 +128,7 @@ public class Main {
 		this.btnConvert.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		this.btnConvert.setBounds(12, 89, 185, 25);
 		this.frmPdfTextExtractor.getContentPane().add(btnConvert);
-		ConvertListener convertListener = new ConvertListener(this.targetFolderField, this.destinationFolderField, this.lblProgressInfo, this.btnConvert, this.btnExtractInfo);
-		this.btnConvert.addActionListener(convertListener);
+		
 		
 	}
 	
@@ -137,6 +139,15 @@ public class Main {
 		this.btnExtractInfo.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		this.btnExtractInfo.setBounds(12, 127, 185, 25);
 		this.frmPdfTextExtractor.getContentPane().add(this.btnExtractInfo);
+		
+		
+	}
+	
+	public void addActionListeners() {
+		
+		ConvertListener convertListener = new ConvertListener(this.targetFolderField, this.destinationFolderField, this.lblProgressInfo, this.btnConvert, this.btnExtractInfo);
+		this.btnConvert.addActionListener(convertListener);
+		
 		ExtractInfoListener extractInfoListener = new ExtractInfoListener(this.targetFolderField, this.destinationFolderField, this.lblProgressInfo, this.btnConvert, this.btnExtractInfo);
 		this.btnExtractInfo.addActionListener(extractInfoListener);
 		
