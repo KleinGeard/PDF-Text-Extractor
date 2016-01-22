@@ -2,7 +2,7 @@
 
 This is a program made to convert directories of pdf files into txt or extract their properties into a csv file. 
 
-it uses Apache PDFBox 2.0.0 which you can download here: https://pdfbox.apache.org/download.cgi 
+It uses Apache PDFBox 2.0.0 which you can download here: https://pdfbox.apache.org/download.cgi 
 
 (pdfbox-2.0.0-RC3.jar)
 
