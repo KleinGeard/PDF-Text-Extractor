@@ -60,7 +60,7 @@ With PDF-Text-Extractor you don't need to upload your potentially confidential p
 
 • Tables, graphs, maps, lists, indexes, etc, may come out funny. This just happens to be the way the text is stored in the file.
 
-
+• Sometimes what loopks like a group of linebreaks is actually just a gap so linebreaks aren't added.
 
 
 
