@@ -16,6 +16,7 @@ public class Main {
 	private JTextField destinationFolderField;
 	private JLabel lblProgressInfo;
 	private JButton btnConvert;
+	private JButton btnExtractInfo;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -42,6 +43,7 @@ public class Main {
 		this.initialiseDestinationFolderSelectionComponents();
 		this.initialiseProgressInfoLabel();
 		this.initialiseConvertButton();
+		this.initialiseExtractInfoButton();
 		
 	}
 	
@@ -58,9 +60,9 @@ public class Main {
 	public void initialiseFrame() {
 		
 		this.frmPdfTextExtractor = new JFrame();
-		frmPdfTextExtractor.setTitle("pdf text extractor");
-		frmPdfTextExtractor.setResizable(false);
-		this.frmPdfTextExtractor.setBounds(100, 100, 900, 175);
+		this.frmPdfTextExtractor.setTitle("pdf text extractor");
+		this.frmPdfTextExtractor.setResizable(false);
+		this.frmPdfTextExtractor.setBounds(100, 100, 900, 200);
 		this.frmPdfTextExtractor.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.frmPdfTextExtractor.getContentPane().setLayout(null);
 		
@@ -118,12 +120,25 @@ public class Main {
 	
 	public void initialiseConvertButton() {
 		
-		this.btnConvert = new JButton("Convert");
+		this.btnConvert = new JButton("Extract Text");
+		this.btnConvert.setToolTipText("Extract the plain text from all of the .pdf files in your target folder and save them as .txt files in your destination folder");
 		this.btnConvert.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		this.btnConvert.setBounds(12, 89, 185, 25);
 		this.frmPdfTextExtractor.getContentPane().add(btnConvert);
-		ConvertListener convertListener = new ConvertListener(this.targetFolderField, this.destinationFolderField, this.lblProgressInfo, this.btnConvert);
+		ConvertListener convertListener = new ConvertListener(this.targetFolderField, this.destinationFolderField, this.lblProgressInfo, this.btnConvert, this.btnExtractInfo);
 		this.btnConvert.addActionListener(convertListener);
+		
+	}
+	
+	public void initialiseExtractInfoButton() {
+		
+		this.btnExtractInfo = new JButton("Extract Info");
+		this.btnExtractInfo.setToolTipText("Extract info (such as file size, author, etc) from all of the .pdf files in your target folder and store it in a single .csv file in your destination folder.");
+		this.btnExtractInfo.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		this.btnExtractInfo.setBounds(12, 127, 185, 25);
+		this.frmPdfTextExtractor.getContentPane().add(this.btnExtractInfo);
+		ExtractInfoListener extractInfoListener = new ExtractInfoListener(this.targetFolderField, this.destinationFolderField, this.lblProgressInfo, this.btnConvert, this.btnExtractInfo);
+		this.btnExtractInfo.addActionListener(extractInfoListener);
 		
 	}
 	

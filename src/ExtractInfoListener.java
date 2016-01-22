@@ -1,13 +1,14 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 import java.io.File;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class ConvertListener implements ActionListener {
-	
+public class ExtractInfoListener implements ActionListener {
+
 	private File targetFileDirectory;
 	private File destinationFileDirectory;
 	
@@ -17,7 +18,8 @@ public class ConvertListener implements ActionListener {
 	private JButton btnConvert;
 	private JButton btnExtractInfo;
 	
-	public ConvertListener (JTextField targetFolderField, JTextField destinationFolderField, JLabel lblProgressInfo, JButton btnConvert, JButton btnExtractInfo) {
+	
+	public ExtractInfoListener (JTextField targetFolderField, JTextField destinationFolderField, JLabel lblProgressInfo, JButton btnConvert, JButton btnExtractInfo) {
 		
 		this.targetFolderField = targetFolderField;
 		this.destinationFolderField = destinationFolderField;
@@ -30,7 +32,7 @@ public class ConvertListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		Thread t = new Thread(new Runnable() { //enables me to update lblProgressInfo and btnConvert while running the parser.
+		Thread t = new Thread(new Runnable() {
 	        @Override
 	        public void run() {
 	        	
@@ -42,8 +44,8 @@ public class ConvertListener implements ActionListener {
 	    		
 	    		if (targetFileDirectory.exists() && destinationFileDirectory.exists()) {
 	    			
-	    			Parser parser = new Parser(targetFileDirectory, destinationFileDirectory, lblProgressInfo);
-	    			parser.parseAll();
+	    			InfoExtractor infoExtractor = new InfoExtractor(targetFileDirectory, destinationFileDirectory, lblProgressInfo);
+	    			infoExtractor.extractAll();
 	    			
 	    		} else {
 	    			
@@ -59,7 +61,7 @@ public class ConvertListener implements ActionListener {
 	    });
 		
 		t.start();
-		
+
 	}
 
 }
