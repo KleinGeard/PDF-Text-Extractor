@@ -68,7 +68,7 @@ public class InfoExtractor extends ParserSuperClass {
 		
 		int numberOfLines = 0;
 		
-		String[] lines = text.split("\n");
+		String[] lines = convertedText.split("\n");
 		numberOfLines = lines.length;
 		
 		return numberOfLines;
@@ -79,7 +79,7 @@ public class InfoExtractor extends ParserSuperClass {
 		
 		int numberOfWords = 0;
 		
-		String[] words = text.split(" ");
+		String[] words = convertedText.split(" ");
 		numberOfWords = words.length;
 		
 		return numberOfWords;
