@@ -37,7 +37,7 @@ public class TextExtractor extends ParserSuperClass {
 	
 	private void setText() {
 		
-		super.text = super.getText();
+		super.text = super.getTextFromPDFFile();
 		
 	}
 	

@@ -20,7 +20,6 @@ public abstract class ParserSuperClass {
 	private PDFParser parser;
 	private COSDocument cosDoc = null;
 	protected PDDocument pdDoc = null;
-	protected PDDocumentInformation pdDocInfo;
 	protected File destinationFileDirectory;
 	protected String destination;
 	protected String nameOfFileCurrentlyBeingParsed;
@@ -88,12 +87,10 @@ public abstract class ParserSuperClass {
 			this.parser.parse();
 	   		this.cosDoc = this.parser.getDocument();
 	   		this.pdDoc = new PDDocument(this.cosDoc);
-	   		this.pdDocInfo = this.pdDoc.getDocumentInformation();
 	   		
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-   		
 		
 	}
 	
@@ -116,7 +113,7 @@ public abstract class ParserSuperClass {
 		
 	}
 	
-	protected String getText() {
+	protected String getTextFromPDFFile() {
 		
 		String text = "";
 		
