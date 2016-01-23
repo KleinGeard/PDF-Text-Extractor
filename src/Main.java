@@ -14,6 +14,8 @@ import ButtonPressed.*;
 public class Main {
 
 	private JFrame frmPdfTextExtractor;
+	private JButton btnSelectTargetFolder;
+	private JButton btnSelectDestinationFolder;
 	private JTextField targetFolderField;
 	private JTextField destinationFolderField;
 	private JLabel lblProgressInfo;
@@ -79,16 +81,13 @@ public class Main {
 		this.targetFolderField.setForeground(Color.BLACK);
 		this.targetFolderField.setBackground(Color.WHITE);
 		this.targetFolderField.setBounds(240, 15, 631, 22);
-		this.frmPdfTextExtractor.getContentPane().add(targetFolderField);
+		this.frmPdfTextExtractor.getContentPane().add(this.targetFolderField);
 		
-		JButton btnSelectTargetFolder = new JButton("Select Target Folder");
-		btnSelectTargetFolder.setToolTipText("Select the folder containing the .pdf documents you wish to convert into .txt.");
-		btnSelectTargetFolder.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnSelectTargetFolder.setBounds(12, 13, 185, 25);
-		this.frmPdfTextExtractor.getContentPane().add(btnSelectTargetFolder);
-		
-		SelectFolderListener selectTargetFolderListener = new SelectFolderListener(this.targetFolderField);
-		btnSelectTargetFolder.addActionListener(selectTargetFolderListener);
+		this.btnSelectTargetFolder = new JButton("Select Target Folder");
+		this.btnSelectTargetFolder.setToolTipText("Select the folder containing the .pdf documents you wish to convert into .txt.");
+		this.btnSelectTargetFolder.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		this.btnSelectTargetFolder.setBounds(12, 13, 185, 25);
+		this.frmPdfTextExtractor.getContentPane().add(this.btnSelectTargetFolder);
 		
 	}
 	
@@ -99,16 +98,13 @@ public class Main {
 		this.destinationFolderField.setText("No Destination Folder Selected");
 		this.destinationFolderField.setBackground(Color.WHITE);
 		this.destinationFolderField.setBounds(240, 53, 631, 22);
-		this.frmPdfTextExtractor.getContentPane().add(destinationFolderField);
+		this.frmPdfTextExtractor.getContentPane().add(this.destinationFolderField);
 		
-		JButton btnSelectDestinationFolder = new JButton("Select Destination Folder");
-		btnSelectDestinationFolder.setToolTipText("Select the folder you wish the converted .txt files to be saved to.");
-		btnSelectDestinationFolder.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnSelectDestinationFolder.setBounds(12, 51, 185, 25);
-		this.frmPdfTextExtractor.getContentPane().add(btnSelectDestinationFolder);
-		
-		SelectFolderListener selectDestinationFolderListener = new SelectFolderListener(this.destinationFolderField);
-		btnSelectDestinationFolder.addActionListener(selectDestinationFolderListener);
+		this.btnSelectDestinationFolder = new JButton("Select Destination Folder");
+		this.btnSelectDestinationFolder.setToolTipText("Select the folder you wish the converted .txt files to be saved to.");
+		this.btnSelectDestinationFolder.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		this.btnSelectDestinationFolder.setBounds(12, 51, 185, 25);
+		this.frmPdfTextExtractor.getContentPane().add(this.btnSelectDestinationFolder);
 		
 	}
 	
@@ -117,7 +113,7 @@ public class Main {
 		this.lblProgressInfo = new JLabel("");
 		this.lblProgressInfo.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		this.lblProgressInfo.setBounds(240, 88, 631, 22);
-		this.frmPdfTextExtractor.getContentPane().add(lblProgressInfo);
+		this.frmPdfTextExtractor.getContentPane().add(this.lblProgressInfo);
 		
 	}
 	
@@ -127,7 +123,7 @@ public class Main {
 		this.btnConvert.setToolTipText("Extract the plain text from all of the .pdf files in your target folder and save them as .txt files in your destination folder");
 		this.btnConvert.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		this.btnConvert.setBounds(12, 89, 185, 25);
-		this.frmPdfTextExtractor.getContentPane().add(btnConvert);
+		this.frmPdfTextExtractor.getContentPane().add(this.btnConvert);
 		
 		
 	}
@@ -144,6 +140,12 @@ public class Main {
 	}
 	
 	public void addActionListeners() {
+		
+		SelectFolderListener selectTargetFolderListener = new SelectFolderListener(this.targetFolderField);
+		this.btnSelectTargetFolder.addActionListener(selectTargetFolderListener);
+		
+		SelectFolderListener selectDestinationFolderListener = new SelectFolderListener(this.destinationFolderField);
+		this.btnSelectDestinationFolder.addActionListener(selectDestinationFolderListener);
 		
 		ConvertListener convertListener = new ConvertListener(this.targetFolderField, this.destinationFolderField, this.lblProgressInfo, this.btnConvert, this.btnExtractInfo);
 		this.btnConvert.addActionListener(convertListener);
