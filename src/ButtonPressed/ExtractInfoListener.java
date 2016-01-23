@@ -5,7 +5,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import Actions.InfoExtractor;
+import Parser.InfoExtractor;
 
 public class ExtractInfoListener extends ButtonPressedSuperClass implements ActionListener {
 	
@@ -15,10 +15,10 @@ public class ExtractInfoListener extends ButtonPressedSuperClass implements Acti
 	}
 
 	@Override
-	public void performAction() {
+	protected void parse() {
 		
 		InfoExtractor infoExtractor = new InfoExtractor(super.targetFileDirectory, super.destinationFileDirectory, super.lblProgressInfo);
-		infoExtractor.extractAll();
+		infoExtractor.parseAll();
 		
 	}
 	

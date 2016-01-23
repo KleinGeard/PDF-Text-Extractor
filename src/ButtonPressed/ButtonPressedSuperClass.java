@@ -68,7 +68,7 @@ public abstract class ButtonPressedSuperClass implements ActionListener {
 		
 		if (targetFileDirectory.exists() && destinationFileDirectory.exists()) {
 			
-			performAction();
+			parse();
 			
 		} else {
 			
@@ -78,6 +78,6 @@ public abstract class ButtonPressedSuperClass implements ActionListener {
 		
 	}
 	
-	public abstract void performAction();
+	protected abstract void parse();
 
 }

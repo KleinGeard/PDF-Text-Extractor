@@ -5,7 +5,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import Actions.Converter;
+import Parser.TextExtractor;
 
 public class ConvertListener extends ButtonPressedSuperClass implements ActionListener {
 	
@@ -15,9 +15,9 @@ public class ConvertListener extends ButtonPressedSuperClass implements ActionLi
 	}
 
 	@Override
-	public void performAction() {
+	protected void parse() {
 		
-		Converter converter = new Converter(super.targetFileDirectory, super.destinationFileDirectory, super.lblProgressInfo);
+		TextExtractor converter = new TextExtractor(super.targetFileDirectory, super.destinationFileDirectory, super.lblProgressInfo);
 		converter.parseAll();
 		
 	}
