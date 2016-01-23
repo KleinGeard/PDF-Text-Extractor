@@ -7,8 +7,6 @@ import java.io.IOException;
 
 import javax.swing.JLabel;
 
-import org.apache.pdfbox.pdmodel.PDDocumentInformation;
-
 public class InfoExtractor extends ParserSuperClass {
 
 	private BufferedWriter writer;
@@ -41,15 +39,14 @@ public class InfoExtractor extends ParserSuperClass {
 
 		String c = ",";
 		String convertedText = super.getTextFromPDFFile();
-		PDDocumentInformation pdDocInfo = super.pdDoc.getDocumentInformation();
 		
 		super.text = "";
-		super.text += this.getSuitableCSVText(pdDocInfo.getTitle());
+		super.text += this.getSuitableCSVText(super.pdDocInfo.getTitle());
 		super.text += c + super.nameOfFileCurrentlyBeingParsed;
-		super.text += c + this.getSuitableCSVText(pdDocInfo.getSubject());
-		super.text += c + this.getSuitableCSVText(pdDocInfo.getKeywords());
-		super.text += c + this.getSuitableCSVText(pdDocInfo.getCreator());
-		super.text += c + this.getSuitableCSVText(pdDocInfo.getProducer());
+		super.text += c + this.getSuitableCSVText(super.pdDocInfo.getSubject());
+		super.text += c + this.getSuitableCSVText(super.pdDocInfo.getKeywords());
+		super.text += c + this.getSuitableCSVText(super.pdDocInfo.getCreator());
+		super.text += c + this.getSuitableCSVText(super.pdDocInfo.getProducer());
 		super.text += c + super.pdDoc.getNumberOfPages(); 
 		super.text += c + this.getNumberOfLines(convertedText); 
 		super.text += c + this.getNumberOfWords(convertedText);

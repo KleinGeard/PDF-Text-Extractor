@@ -35,12 +35,12 @@ public abstract class ButtonPressedSuperClass implements ActionListener {
 	        @Override
 	        public void run() {
 	        	
-	        	setEnabled(false);
+	        	setButtonEnabled(false);
 	        	
 	        	createFiles();
 	    		performAction();
 	    		
-	    		setEnabled(true);
+	    		setButtonEnabled(true);
 	        	
 	        }    
 	        
@@ -50,7 +50,7 @@ public abstract class ButtonPressedSuperClass implements ActionListener {
 
 	}
 	
-	private void setEnabled(Boolean bool) {
+	private void setButtonEnabled(Boolean bool) {
 		
 		this.btnConvert.setEnabled(bool);
 		this.btnExtractInfo.setEnabled(bool);
