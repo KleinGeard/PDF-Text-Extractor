@@ -31,14 +31,14 @@ public abstract class ButtonPressedSuperClass implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		Thread t = new Thread(new Runnable() {
+		Thread t = new Thread(new Runnable() { //enables lblProgressInfo to be changed while parser is running.
 	        @Override
 	        public void run() {
 	        	
 	        	setEnabled(false);
 	        	
 	        	createFiles();
-	    		checkFiles();
+	    		performAction();
 	    		
 	    		setEnabled(true);
 	        	
@@ -64,7 +64,7 @@ public abstract class ButtonPressedSuperClass implements ActionListener {
 		
 	}
 	
-	private void checkFiles() {
+	private void performAction() {
 		
 		if (targetFileDirectory.exists() && destinationFileDirectory.exists()) {
 			
