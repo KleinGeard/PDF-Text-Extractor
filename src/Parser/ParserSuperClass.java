@@ -15,16 +15,16 @@ import org.apache.pdfbox.text.PDFTextStripper;
 public abstract class ParserSuperClass {
 
 	private File[] targetPDFFiles;
-	protected File destinationFileDirectory;
-	protected String destination;
+	private JLabel lblProgressInfo;
 	private PDFTextStripper textStripper;
 	private PDFParser parser;
-	private JLabel lblProgressInfo;
-	protected String nameOfFileCurrentlyBeingParsed;
 	private COSDocument cosDoc = null;
 	protected PDDocument pdDoc = null;
-	protected String text;
 	protected PDDocumentInformation pdDocInfo;
+	protected File destinationFileDirectory;
+	protected String destination;
+	protected String nameOfFileCurrentlyBeingParsed;
+	protected String text;
 	
 	public ParserSuperClass(File targetFileDirectory, File destinationFileDirectory, JLabel lblProgressInfo) {
 		
