@@ -30,7 +30,6 @@ public class TextExtractor extends ParserSuperClass {
 	
 	private void setDestination(File file) {
 		
-		//e.g. "C:\Users\klein\Documents\pdf work related\txtDirectories\religious\Bible_King_James_Version.txt"
 		super.destination = super.destinationFileDirectory.toString() + "\\" + super.nameOfFileCurrentlyBeingParsed + ".txt";
         
 	}

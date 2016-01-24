@@ -13,13 +13,7 @@ public class InfoExtractor extends ParserSuperClass {
 	
 	public InfoExtractor(File targetFileDirectory, File destinationFileDirectory, JLabel lblProgressInfo) {
 		super(targetFileDirectory, destinationFileDirectory, lblProgressInfo);
-		this.setDestination();
-	}
-	
-	private void setDestination() {
-		
 		super.destination = super.destinationFileDirectory + "/pdf_info.csv";
-
 	}
 
 	@Override

@@ -78,7 +78,7 @@ public abstract class ParserSuperClass {
 		
 	}
 	
-	protected abstract String getUpdateProgressVerb(); //e.g "Extracting Text From " ...
+	protected abstract String getUpdateProgressVerb(); //e.g "Extracting Text From " or "Extracting info from"
 	
 	private void initialisePDFBoxDocs(File file) {
 		
@@ -88,7 +88,7 @@ public abstract class ParserSuperClass {
 			this.parser.parse();
 	   		this.cosDoc = this.parser.getDocument();
 	   		this.pdDoc = new PDDocument(this.cosDoc);
-	   		this.pdDoc.getDocumentInformation();
+	   		this.pdDocInfo = this.pdDoc.getDocumentInformation();
 	   		
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -117,15 +117,12 @@ public abstract class ParserSuperClass {
 	
 	protected String getTextFromPDFFile() {
 		
-		String text = "";
-		
 		try {
-			text = this.textStripper.getText(this.pdDoc);
+			return this.textStripper.getText(this.pdDoc);
 		} catch (IOException e) {
 			e.printStackTrace();
+			return "";
 		}
-		
-		return text;
 		
 	}
 
