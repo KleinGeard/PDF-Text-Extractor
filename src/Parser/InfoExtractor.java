@@ -13,7 +13,34 @@ public class InfoExtractor extends ParserSuperClass {
 	
 	public InfoExtractor(File targetFileDirectory, File destinationFileDirectory, JLabel lblProgressInfo) {
 		super(targetFileDirectory, destinationFileDirectory, lblProgressInfo);
+		this.createFile();
+	}
+	
+	private void createFile() {
+		
 		super.destination = super.destinationFileDirectory + "/pdf_info.csv";
+		this.addTitles();
+		
+	}
+	
+	private void addTitles() {
+		
+		File file = new File(super.destination);
+		
+		if (!file.exists()) {
+			
+			try {
+				this.writer = new BufferedWriter(new FileWriter(this.destination, true));
+				this.writer.write("title, file name, subject, keywords, creator, producer, file size(bytes), number of pages, number of lines, number of words, encrypted(true/false)");
+				this.writer.newLine();
+		        this.writer.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			
+		}
+		
 	}
 
 	@Override
