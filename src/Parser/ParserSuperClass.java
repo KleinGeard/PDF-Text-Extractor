@@ -68,12 +68,12 @@ public abstract class ParserSuperClass {
 	private void setNameOfFileCurrentlyBeingParsed (File file) {
 		
 		//e.g. "Bible_King_James_Version"
-		this.nameOfFileCurrentlyBeingParsed = (file.toString().substring(file.toString().lastIndexOf("\\") + 1)).replace(".pdf", "");
-		
+		this.nameOfFileCurrentlyBeingParsed = file.getName().replace(".pdf", "");
 	}
 	
 	private void updateProgressInfo(File file) {
 		
+		//e.g "Extracting Text From Bibgle_King_James_Version"
 		this.lblProgressInfo.setText(this.getUpdateProgressVerb() + this.nameOfFileCurrentlyBeingParsed);
 		
 	}
