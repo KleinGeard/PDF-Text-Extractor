@@ -68,6 +68,7 @@ public class InfoExtractor extends ParserSuperClass {
 		super.text += c + this.getSuitableCSVText(super.pdDocInfo.getKeywords());
 		super.text += c + this.getSuitableCSVText(super.pdDocInfo.getCreator());
 		super.text += c + this.getSuitableCSVText(super.pdDocInfo.getProducer());
+		super.text += c + file.length();
 		super.text += c + super.pdDoc.getNumberOfPages(); 
 		super.text += c + this.getNumberOfLines(convertedText); 
 		super.text += c + this.getNumberOfWords(convertedText);
