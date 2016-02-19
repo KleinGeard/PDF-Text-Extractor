@@ -1,5 +1,7 @@
 # PDF-Text-Extractor
 
+![picture alt](http://i.imgur.com/JnqNwAh.png "screenshot")
+
 This is a program made to convert directories of pdf files into txt or extract their properties into a csv file. 
 
 It uses Apache PDFBox 2.0.0 which you can download here: https://pdfbox.apache.org/download.cgi 
@@ -58,6 +60,6 @@ title, file name, subject, keywords, creator, producer, file size(bytes), number
 
 • A lot of pdf files don't have certain properties such as a title or a subject so these come out empty.
 
-![picture alt](http://i.imgur.com/JnqNwAh.png "screenshot")
+
 
 
