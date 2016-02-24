@@ -8,11 +8,11 @@ It uses Apache PDFBox 2.0.0 which you can download here: https://pdfbox.apache.o
 
 (pdfbox-2.0.0-RC3.jar)
 
-## HOW TO USE THIS PROGRAM
-
 Download the executable jar file [here.](https://drive.google.com/folderview?id=0B_Yr8TO0xAL7Mk9pSU0wUmpOd1E&usp=sharing)
 
 (this link was added on 24/02/16, so it may be outdated)
+
+## HOW TO USE THIS PROGRAM
 
 #### To get it running
 
