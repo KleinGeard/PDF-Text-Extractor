@@ -62,6 +62,5 @@ title, file name, subject, keywords, creator, producer, file size(bytes), number
 
 • A lot of pdf files don't have certain properties such as a title or a subject so these come out empty.
 
-![picture alt](http://i.imgur.com/JnqNwAh.png "screenshot")
 
 
