@@ -44,7 +44,7 @@ Download the executable jar file [here.](https://drive.google.com/folderview?id=
 
 • Once it is done the information extracted from your pdf files should be in pdf_info.csv in your chosen destination folder.
 
-###### The pdf_info.csv will contain the follow data: 
+#### The pdf_info.csv will contain the follow data: 
 
 title, file name, subject, keywords, creator, producer, file size(bytes), number of pages, number of lines, number of words, encrypted(true/false)
 
